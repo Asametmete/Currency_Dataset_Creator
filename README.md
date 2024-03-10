@@ -36,3 +36,9 @@ Create a txt file and place its file path in the "PATH/" section. With this, the
 		
 	}
 ```
+
+## Additional
+
+The dataset was printed in a usable format in Python's pandas library.
+
+Columns are separated by ":". Therefore, it can easily be turned into a dataframe in the pandas library.
