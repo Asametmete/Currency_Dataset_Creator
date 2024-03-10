@@ -19,7 +19,7 @@ public class Main {
 		DataRequestedByTheUser dataRequestedByTheUser = new DataRequestedByTheUser();
 		Locators locators = new Locators(driver);
 		WebDriverWait webdriverWait = new WebDriverWait(driver,Duration.ofSeconds(3));
-		BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\samet\\OneDrive\\Masaüstü\\currency.txt")); //Type the path of a blank txt file on your computer here to save it in your own txt file.
+		BufferedWriter writer = new BufferedWriter(new FileWriter("PATH/")); //Type the path of a blank txt file on your computer here to save it in your own txt file.
 		GoToLocators go = new GoToLocators(locators,webdriverWait);
 		DataOperations dataOperations = new DataOperations(go,locators,webdriverWait,dataRequestedByTheUser,writer);
 		
