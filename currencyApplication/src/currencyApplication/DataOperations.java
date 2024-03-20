@@ -29,13 +29,13 @@ public class DataOperations {
 	
 	private String getBuyDollarInf() {
 		webdriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locators.getLocationOfTheStringBuyDollar())));  //There is some information that is not on the page when it is opened, so we must wait until this information is loaded.
-		return" Dolar Alış / Dollar Buy : " + locators.getLocationOfTheBuyDollar().getText() +" : ";
+		return locators.getLocationOfTheBuyDollar().getText() +" : ";
 	}
 	
 	
 	private String getSaleDollarInf() {
 		webdriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locators.getLocationOfTheStringDollarSale())));  //There is some information that is not on the page when it is opened, so we must wait until this information is loaded.
-		return" Dolar Satış / Dollar Sale : " + locators.getLocationOfTheSaleDollar().getText();
+		return locators.getLocationOfTheSaleDollar().getText();
 	}
 		
 	
@@ -89,7 +89,7 @@ public class DataOperations {
 	
 	private void GetDataAndWriteTheFile(String userYear,String userMonth) {	
 	   List<WebElement> days = locators.getLocationOfTheDays(goLoc.divPathSelector(userYear));   //We took the all the days in the calendar in this list
-	   writerWrite("Tarih/Date: "+"Dolar Alış/Dollar Buy: "+"Değer/Value:"+"Dolar Satış/Dollar Sell: "+"Değer/Value");
+	   writerWrite("Tarih/Date: "+"Dolar Alış/Dollar Buy: "+"Dolar Satış/Dollar Sell");
 	   writerNewLine();
 		    for (int i = 0; i < days.size(); i++) {        //handle to calendar
 		        try 
@@ -97,7 +97,7 @@ public class DataOperations {
 		            WebElement day = days.get(i);  
 		            String dayText = dayValidator(day);
 		            String date = dayText+"."+userMonth+"."+userYear;
-		            writerWrite(date+":");
+		            writerWrite(date+" : ");
 		            WebElement clickableDay = webdriverWait.until(ExpectedConditions.elementToBeClickable(day));   //We are waiting for Ah elements to be loaded
 		            clickableDay.click();
  
